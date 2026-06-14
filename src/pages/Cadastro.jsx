@@ -11,7 +11,6 @@ function Cadastro() {
   function cadastrar(e) {
     e.preventDefault();
 
-  
     if (!nome.trim()) {
       alert("Nome obrigatório");
       return;
@@ -27,7 +26,6 @@ function Cadastro() {
       return;
     }
 
-    
     const novoUsuario = {
       id: Date.now(),
       nome,
@@ -35,10 +33,15 @@ function Cadastro() {
       telefone,
     };
 
-   
-    setUsuarios([...usuarios, novoUsuario]);
+    const novosUsuarios = [...usuarios, novoUsuario];
 
-   
+    setUsuarios(novosUsuarios);
+
+    localStorage.setItem(
+      "usuarios",
+      JSON.stringify(novosUsuarios)
+    );
+
     setNome("");
     setEmail("");
     setTelefone("");
