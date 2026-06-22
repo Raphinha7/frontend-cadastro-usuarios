@@ -3,7 +3,7 @@ import { UsuarioContext } from "../context/UsuarioContext";
 import api from "../services/api";
 
 function Listagem() {
-  const { usuarios } = useContext(UsuarioContext);
+  const { usuarios, setUsuarios } = useContext(UsuarioContext);
 
   const [usuariosApi, setUsuariosApi] = useState([]);
 
@@ -18,21 +18,57 @@ function Listagem() {
       });
   }, []);
 
+  function excluirJogador(id) {
+    const confirmar = window.confirm(
+      "Deseja realmente excluir este jogador?"
+    );
+
+    if (!confirmar) return;
+
+    const novaLista = usuarios.filter(
+      (usuario) => usuario.id !== id
+    );
+
+    setUsuarios(novaLista);
+
+    localStorage.setItem(
+      "usuarios",
+      JSON.stringify(novaLista)
+    );
+  }
+
   return (
     <div className="container">
       <h1>🎮 GameHub</h1>
 
-      <h2>Jogadores Cadastrados</h2>
+      <h2>👥 Jogadores Cadastrados</h2>
 
       {usuarios.length === 0 ? (
-        <p>Nenhum jogador cadastrado.</p>
+        <div className="card">
+          <p>Nenhum jogador cadastrado.</p>
+        </div>
       ) : (
         usuarios.map((usuario) => (
           <div className="card" key={usuario.id}>
-            <h3>{usuario.nome}</h3>
-            <p>Email: {usuario.email}</p>
-            <p>Plataforma: {usuario.telefone}</p>
-            <hr />
+            <h3>🎮 {usuario.nome}</h3>
+
+            <p>
+              <strong>Email:</strong>{" "}
+              {usuario.email}
+            </p>
+
+            <p>
+              <strong>Plataforma:</strong>{" "}
+              {usuario.telefone}
+            </p>
+
+            <button
+              onClick={() =>
+                excluirJogador(usuario.id)
+              }
+            >
+              🗑️ Excluir Jogador
+            </button>
           </div>
         ))
       )}
@@ -41,10 +77,22 @@ function Listagem() {
 
       {usuariosApi.map((usuario) => (
         <div className="card" key={usuario.id}>
-          <h3>{usuario.name}</h3>
-          <p>Email: {usuario.email}</p>
-          <p>Organização: {usuario.company.name}</p>
-          <hr />
+          <h3>👤 {usuario.name}</h3>
+
+          <p>
+            <strong>Email:</strong>{" "}
+            {usuario.email}
+          </p>
+
+          <p>
+            <strong>Organização:</strong>{" "}
+            {usuario.company.name}
+          </p>
+
+          <p>
+            <strong>Cidade:</strong>{" "}
+            {usuario.address.city}
+          </p>
         </div>
       ))}
     </div>

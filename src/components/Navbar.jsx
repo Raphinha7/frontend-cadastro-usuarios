@@ -13,6 +13,7 @@ function Navbar() {
       <Link to="/cadastro">Cadastrar Jogador</Link>
       <Link to="/listagem">Jogadores</Link>
       <Link to="/biblioteca">Biblioteca</Link>    
+      <Link to="/perfil">Perfil Gamer</Link>
     </nav>
   );
 }
