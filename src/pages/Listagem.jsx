@@ -20,30 +20,30 @@ function Listagem() {
 
   return (
     <div className="container">
-      <h1>Listagem de Usuários</h1>
+      <h1>🎮 GameHub</h1>
 
-      <h2>Usuários Cadastrados</h2>
+      <h2>Jogadores Cadastrados</h2>
 
       {usuarios.length === 0 ? (
-        <p>Nenhum usuário cadastrado.</p>
+        <p>Nenhum jogador cadastrado.</p>
       ) : (
         usuarios.map((usuario) => (
-          <div key={usuario.id}>
+          <div className="card" key={usuario.id}>
             <h3>{usuario.nome}</h3>
             <p>Email: {usuario.email}</p>
-            <p>Telefone: {usuario.telefone}</p>
+            <p>Plataforma: {usuario.telefone}</p>
             <hr />
           </div>
         ))
       )}
 
-      <h2>Usuários da API</h2>
+      <h2>Jogos em Destaque</h2>
 
       {usuariosApi.map((usuario) => (
-        <div key={usuario.id}>
+        <div className="card" key={usuario.id}>
           <h3>{usuario.name}</h3>
           <p>Email: {usuario.email}</p>
-          <p>Empresa: {usuario.company.name}</p>
+          <p>Desenvolvedora: {usuario.company.name}</p>
           <hr />
         </div>
       ))}

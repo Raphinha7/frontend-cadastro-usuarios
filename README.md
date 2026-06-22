@@ -1,26 +1,24 @@
-# Sistema de Cadastro de Usuários
+# 🎮 GameHub
 
-## Objetivo
+Sistema web inspirado em plataformas como Xbox Live e PlayStation Network.
 
-Aplicação React desenvolvida para demonstrar navegação entre páginas, cadastro de usuários, consumo de API REST e gerenciamento de estado compartilhado.
+## Funcionalidades
 
-## Tecnologias Utilizadas
+- Cadastro de jogadores
+- Validação de formulários
+- Gerenciamento de estado com Context API
+- Persistência de dados com localStorage
+- Consumo de API REST
+- Navegação entre páginas com React Router
+- Interface responsiva
+
+## Tecnologias
 
 - React
 - React Router DOM
 - Axios
 - Context API
 - CSS
-
-## Funcionalidades
-
-- Navegação entre páginas
-- Cadastro de usuários
-- Validação de formulário
-- Listagem de usuários cadastrados
-- Consumo de API REST
-- Responsividade
-
 ## Como Executar
 
 ```bash

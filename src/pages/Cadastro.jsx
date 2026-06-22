@@ -12,7 +12,7 @@ function Cadastro() {
     e.preventDefault();
 
     if (!nome.trim()) {
-      alert("Nome obrigatório");
+      alert("Gamertag obrigatória");
       return;
     }
 
@@ -22,7 +22,7 @@ function Cadastro() {
     }
 
     if (!telefone.trim()) {
-      alert("Telefone obrigatório");
+      alert("Plataforma obrigatória");
       return;
     }
 
@@ -46,20 +46,20 @@ function Cadastro() {
     setEmail("");
     setTelefone("");
 
-    alert("Usuário cadastrado com sucesso!");
+    alert("Jogador cadastrado com sucesso!");
   }
 
   return (
     <div className="container">
-      <h1>Cadastro de Usuários</h1>
+      <h1>🎮 Cadastro de Jogadores</h1>
 
       <form onSubmit={cadastrar}>
         <div>
-          <label>Nome:</label>
+          <label>Gamertag:</label>
           <br />
           <input
             type="text"
-            placeholder="Digite o nome"
+            placeholder="Digite sua gamertag"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
           />
@@ -72,7 +72,7 @@ function Cadastro() {
           <br />
           <input
             type="email"
-            placeholder="Digite o email"
+            placeholder="Digite seu email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -81,11 +81,11 @@ function Cadastro() {
         <br />
 
         <div>
-          <label>Telefone:</label>
+          <label>Plataforma:</label>
           <br />
           <input
             type="text"
-            placeholder="Digite o telefone"
+            placeholder="Xbox, PlayStation ou PC"
             value={telefone}
             onChange={(e) => setTelefone(e.target.value)}
           />
@@ -94,7 +94,7 @@ function Cadastro() {
         <br />
 
         <button type="submit">
-          Cadastrar
+          Cadastrar Jogador
         </button>
       </form>
     </div>

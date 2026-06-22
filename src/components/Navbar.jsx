@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav>
-      <Link to="/">Início</Link>
-      <Link to="/cadastro">Cadastro</Link>
-      <Link to="/listagem">Listagem</Link>
+      <Link to="/">🎮 GameHub</Link>
+      <Link to="/cadastro">Cadastrar Jogador</Link>
+      <Link to="/listagem">Jogadores</Link>
     </nav>
   );
 }
