@@ -22,7 +22,7 @@ function Cadastro() {
     }
 
     if (!telefone.trim()) {
-      alert("Plataforma obrigatória");
+      alert("Selecione uma plataforma");
       return;
     }
 
@@ -46,20 +46,24 @@ function Cadastro() {
     setEmail("");
     setTelefone("");
 
-    alert("Jogador cadastrado com sucesso!");
+    alert("Perfil criado com sucesso!");
   }
 
   return (
     <div className="container">
-      <h1>🎮 Cadastro de Jogadores</h1>
+      <h1>🎮 Cadastro de Jogador</h1>
+
+      <p className="subtitulo-cadastro">
+        Crie seu perfil e faça parte da comunidade GameHub.
+      </p>
 
       <form onSubmit={cadastrar}>
         <div>
-          <label>Gamertag:</label>
+          <label>Gamertag</label>
           <br />
           <input
             type="text"
-            placeholder="Digite sua gamertag"
+            placeholder="Ex: Raphinha7"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
           />
@@ -68,11 +72,11 @@ function Cadastro() {
         <br />
 
         <div>
-          <label>Email:</label>
+          <label>Email</label>
           <br />
           <input
             type="email"
-            placeholder="Digite seu email"
+            placeholder="Ex: jogador@email.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -81,20 +85,24 @@ function Cadastro() {
         <br />
 
         <div>
-          <label>Plataforma:</label>
+          <label>Plataforma</label>
           <br />
-          <input
-            type="text"
-            placeholder="Xbox, PlayStation ou PC"
+          <select
             value={telefone}
             onChange={(e) => setTelefone(e.target.value)}
-          />
+          >
+            <option value="">Selecione uma plataforma</option>
+            <option value="Xbox">Xbox</option>
+            <option value="PlayStation">PlayStation</option>
+            <option value="PC">PC</option>
+            <option value="Nintendo">Nintendo</option>
+          </select>
         </div>
 
         <br />
 
         <button type="submit">
-          Cadastrar Jogador
+          🚀 Criar Perfil
         </button>
       </form>
     </div>

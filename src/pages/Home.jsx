@@ -1,36 +1,26 @@
-import { useContext } from "react";
-import { UsuarioContext } from "../context/UsuarioContext";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const { usuarios } = useContext(UsuarioContext);
+  const navigate = useNavigate();
 
   return (
-    <div className="container">
-      <h1>🎮 GameHub</h1>
+    <div className="home-xbox">
+      <h1 className="logo">🎮 GAMEHUB</h1>
 
-      <h2>Plataforma de Gerenciamento de Jogadores</h2>
+      <h2 className="titulo-home">
+        SUA COMUNIDADE GAMER
+      </h2>
 
-      <p>
-        Sistema inspirado em plataformas como Xbox Live e PlayStation Network.
+      <p className="subtitulo">
+        Cadastre jogadores, organize perfis e acompanhe a comunidade GameHub.
       </p>
 
-      <div className="card">
-        <h3>Total de Jogadores Cadastrados</h3>
-        <p>{usuarios.length}</p>
-      </div>
-
-      <div className="card">
-        <h3>Funcionalidades</h3>
-
-        <ul>
-          <li>Cadastro de jogadores</li>
-          <li>Validação de formulário</li>
-          <li>Listagem dinâmica</li>
-          <li>Context API</li>
-          <li>Integração com API REST</li>
-          <li>Persistência com localStorage</li>
-        </ul>
-      </div>
+      <button
+        className="btn-home"
+        onClick={() => navigate("/cadastro")}
+      >
+        ENTRAR NO GAMEHUB
+      </button>
     </div>
   );
 }

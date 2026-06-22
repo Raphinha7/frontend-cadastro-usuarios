@@ -37,13 +37,13 @@ function Listagem() {
         ))
       )}
 
-      <h2>Jogos em Destaque</h2>
+      <h2>🌎 Comunidade GameHub</h2>
 
       {usuariosApi.map((usuario) => (
         <div className="card" key={usuario.id}>
           <h3>{usuario.name}</h3>
           <p>Email: {usuario.email}</p>
-          <p>Desenvolvedora: {usuario.company.name}</p>
+          <p>Organização: {usuario.company.name}</p>
           <hr />
         </div>
       ))}
